@@ -1,0 +1,5 @@
+package fivecard
+
+class FiveCardTestSpec {
+
+}
