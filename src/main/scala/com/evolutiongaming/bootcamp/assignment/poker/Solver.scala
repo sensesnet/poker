@@ -1,7 +1,7 @@
 package com.evolutiongaming.bootcamp.assignment.poker
 
-import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler.{CardParserException, FiveCardDrawPokerException, GameAnalyzeException, OmahaHoldemPokerException, TexasHoldemPokerException}
-import com.evolutiongaming.bootcamp.assignment.poker.pocker.Card
+import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler._
+import com.evolutiongaming.bootcamp.assignment.poker.poker.Card
 import com.evolutiongaming.bootcamp.assignment.poker.util.CardAnalyzer._
 import com.evolutiongaming.bootcamp.assignment.poker.util.CardParser._
 import com.evolutiongaming.bootcamp.assignment.poker.util.GameDataAnalyzer._

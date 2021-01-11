@@ -1,13 +1,13 @@
 package holdem
 
-import com.evolutiongaming.bootcamp.assignment.poker.pocker.{Card, PokerHand}
+import com.evolutiongaming.bootcamp.assignment.poker.poker._
 import com.evolutiongaming.bootcamp.assignment.poker.util.Weight._
 import com.evolutiongaming.bootcamp.assignment.poker.util.Suit._
 import com.evolutiongaming.bootcamp.assignment.poker.util.CardChecker._
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-class HoldemTestSpec extends AnyWordSpec with Matchers{
+class HoldemTestSpec extends AnyWordSpec with Matchers {
 
   "High Card" in {
     val board = List(
@@ -51,6 +51,20 @@ class HoldemTestSpec extends AnyWordSpec with Matchers{
       Card(Card_7, s),
       Card(Card_A, c))
     getScore(board, hand) shouldBe PokerHand("Pair", hand, 100, 14, 29)
+  }
+
+  "Two Pairs" in {
+    val board = List(
+      Card(Card_2, s),
+      Card(Card_3, s),
+      Card(Card_J, s),
+      Card(Card_7, c),
+      Card(Card_4, c))
+
+    val hand = List(
+      Card(Card_2, d),
+      Card(Card_3, d))
+    getScore(board, hand) shouldBe PokerHand("Two Pairs", hand, 200, 3, 11)
   }
 
   "Test 3 of a kind" in {

@@ -1,7 +1,7 @@
 package com.evolutiongaming.bootcamp.assignment.poker.util
 
 import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler.GameAnalyzeException
-import com.evolutiongaming.bootcamp.assignment.poker.pocker.{Card, Result}
+import com.evolutiongaming.bootcamp.assignment.poker.poker.{Card, Result}
 
 object CardAnalyzer {
 
@@ -28,6 +28,6 @@ object CardAnalyzer {
           scoreCheck.kickerCardScore
         )
     }
-    results.sortBy(_.kicker_score).sortBy(_.combo_score).sortBy(_.score)
+    results.sortBy(_.kickerCardScore).sortBy(_.combinationCardScore).sortBy(_.score)
   }
 }

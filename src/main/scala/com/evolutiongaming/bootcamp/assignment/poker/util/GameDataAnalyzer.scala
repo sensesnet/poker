@@ -1,7 +1,7 @@
 package com.evolutiongaming.bootcamp.assignment.poker.util
 
-import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler.{FiveCardDrawPokerException, OmahaHoldemPokerException, TexasHoldemPokerException}
-import com.evolutiongaming.bootcamp.assignment.poker.pocker.Card
+import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler._
+import com.evolutiongaming.bootcamp.assignment.poker.poker.Card
 import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionMessages._
 import com.evolutiongaming.bootcamp.assignment.poker.util.CardParser._
 
@@ -25,7 +25,7 @@ object GameDataAnalyzer {
     decodeCards((board ::: hands.flatten) diff (board ::: hands.flatten).distinct)
   }
 
-  def analyzeTexasHoldemData(board: List[Card], hands: List[List[Card]]) = {
+  def analyzeTexasHoldemData(board: List[Card], hands: List[List[Card]]): Unit = {
     if (!checkBoardCard(board, 5)) throw TexasHoldemPokerException(s"$wrongBoardCard ${board.toString}")
     if (hands.isEmpty) throw TexasHoldemPokerException(emptyHandCardList)
     if (!checkNumOfPlayers(hands, 2, 25)) throw TexasHoldemPokerException(s"$wrongNumberOfPlayers ${hands.length}")
@@ -35,7 +35,7 @@ object GameDataAnalyzer {
     )
   }
 
-  def analyzeOmahaHoldemData(board: List[Card], hands: List[List[Card]]) = {
+  def analyzeOmahaHoldemData(board: List[Card], hands: List[List[Card]]): Unit = {
     if (!checkBoardCard(board, 5)) throw OmahaHoldemPokerException(s"$wrongBoardCard ${board.toString}")
     if (hands.isEmpty) throw OmahaHoldemPokerException(emptyHandCardList)
     if (!checkNumOfPlayers(hands, 2, 12)) throw OmahaHoldemPokerException(s"$wrongNumberOfPlayers ${hands.length}")
@@ -45,7 +45,7 @@ object GameDataAnalyzer {
     )
   }
 
-  def analyzeFiveCardDrawData(board: List[Card], hands: List[List[Card]]) = {
+  def analyzeFiveCardDrawData(board: List[Card], hands: List[List[Card]]): Unit = {
     if (!checkBoardCard(board, 5)) throw FiveCardDrawPokerException(s"$wrongBoardCard ${board.toString}")
     if (hands.isEmpty) throw FiveCardDrawPokerException(emptyHandCardList)
     if (!checkNumOfPlayers(hands, 2, 10)) throw FiveCardDrawPokerException(s"$wrongNumberOfPlayers ${hands.length}")

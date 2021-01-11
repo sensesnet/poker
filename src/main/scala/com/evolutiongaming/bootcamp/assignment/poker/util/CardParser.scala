@@ -1,7 +1,7 @@
 package com.evolutiongaming.bootcamp.assignment.poker.util
 
-import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler.CardParserException
-import com.evolutiongaming.bootcamp.assignment.poker.pocker.Card
+import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionHandler._
+import com.evolutiongaming.bootcamp.assignment.poker.poker.Card
 import com.evolutiongaming.bootcamp.assignment.poker.exception.ExceptionMessages._
 
 object CardParser {
